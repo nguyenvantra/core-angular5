@@ -4,3 +4,4 @@ export * from './app-sidebar-nav';
 export * from './app-sidebar-minimizer';
 export * from './app-aside';
 export * from './app-footer';
+export * from './app-breadcrumbs';

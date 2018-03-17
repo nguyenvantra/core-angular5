@@ -4,6 +4,19 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 import { BootstrapModule } from './bootstrap.module';
 import { AppComponent } from './app.component';
+// Import routing module
+import { AppRoutingModule } from './app.routing';
+
+// Import containers
+import {
+  FullLayoutComponent,
+  SimpleLayoutComponent
+} from './containers';
+
+const APP_CONTAINERS = [
+  FullLayoutComponent,
+  SimpleLayoutComponent
+]
 
 // Import components
 import { 
@@ -12,7 +25,8 @@ import {
   AppSidebarNavComponent,
   AppSidebarMinimizerComponent,
   AppAsideComponent,
-  AppFooterComponent
+  AppFooterComponent,
+  AppBreadcrumbsComponent
 } from './components';
 const APP_COMPONENTS = [
   AppHeaderComponent,
@@ -20,7 +34,8 @@ const APP_COMPONENTS = [
   AppSidebarNavComponent,
   AppSidebarMinimizerComponent,
   AppAsideComponent,
-  AppFooterComponent
+  AppFooterComponent,
+  AppBreadcrumbsComponent
 ]
 
 //Import directives
@@ -40,11 +55,13 @@ const APP_DIRECTIVES = [
   declarations: [
     AppComponent,
     ...APP_COMPONENTS,
-    ...APP_DIRECTIVES
+    ...APP_DIRECTIVES,
+    ...APP_CONTAINERS
   ],
   imports: [
     BrowserModule,
-    BootstrapModule
+    BootstrapModule,
+    AppRoutingModule
   ],
   providers: [{
     provide: LocationStrategy,
